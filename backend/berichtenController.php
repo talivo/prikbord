@@ -25,3 +25,15 @@ if($action == "edit")
 
     header('Location: ../index.php?msg=Bericht is aangepast');
 }
+
+if($action == "delete"){
+    $id = $_POST['id'];
+    require_once 'conn.php';
+    $query = "DELETE FROM berichten WHERE id = :id";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ':id' => $id
+    ]);
+
+    header('Location:  ../index.php?msg=Melding verwijderd');
+}

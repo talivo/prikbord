@@ -29,6 +29,14 @@
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <input type="hidden" name="action" value="edit">
         </form>
+        <hr>
+        <form action="../backend/berichtenController.php" method="POST">
+            <div class="form-group">
+                <input type="submit" value="Verwijderen">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+            </div>
+        </form>
     </div>  
 </body>
 </html>
